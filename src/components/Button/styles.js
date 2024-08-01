@@ -5,11 +5,11 @@ export const Container = styled.button`
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
   color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-  height: 56px;
+  height: 3.5rem;
   border: 0;
-  padding: 0 16px;
-  margin-top: 16px;
-  border-radius: 10px;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-radius: .62rem;
   font-weight: 500;
 
   &:disabled {

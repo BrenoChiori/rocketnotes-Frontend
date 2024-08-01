@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: grid;
-    grid-template-rows: 105px auto;
+    grid-template-rows: 6.56rem auto;
     grid-template-areas:
         "header"
         "content"
@@ -24,20 +25,24 @@ export const Container = styled.div`
 `
 
 export const Form = styled.form`
-    max-width: 550px;
-    margin: 38px auto;
+    max-width: 34.37rem;
+    margin: 2.37rem auto;
     
     > header {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        margin-bottom: 36px;
+        margin-bottom: 2.25rem;
 
         button {
-            font-size: 20px;
+            font-size: 1.25rem;
             color:  ${({ theme }) => theme.COLORS.GRAY_100};
         }
+    }
+
+    @media(max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        padding: 0 2rem;
     }
 
 `

@@ -1,69 +1,49 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: grid;
     grid-template-columns: 250px auto;
-    grid-template-rows: 105px 128px auto 64px;
+    grid-template-rows: 6.56rem 8rem auto 4rem;
     grid-template-areas: 
-        "brand header"
-        "menu search"
-        "menu content"
-        "newnote content"
+        "sidebar header"
+        "sidebar search"
+        "sidebar content"
+        "sidebar content"
     ;
 
     background-color: ${({ theme}) => theme.COLORS.BACKGROUND_800};
 
-`
-export const Brand = styled.div`
-    grid-area: brand;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        flex: 1;
+        grid-template-columns: auto;
+        grid-template-rows: 6.56rem 8rem auto;
 
-    border-bottom-width: 1px ;
-    border-bottom-style: solid ;
-    border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-
-    > h1 {
-        font-size: 24px;
-        color: ${({ theme}) => theme.COLORS.ORANGE};
+        grid-template-areas: 
+            "header"
+            "search"
+            "content"
+        ;
     }
+
 `
-export const Menu = styled.ul`
-    grid-area: menu;
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-    padding-top: 64px;
-    text-align: center;
-    
-    > li {
-        margin-bottom: 24px;
-    }
-`
+
 export const Search = styled.div`
     grid-area: search;
-    padding: 64px 65px 0;
+    padding: 4rem 4rem 0;
 
+    @media(max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        padding: 3rem 1rem 0;
+    }
 `
 export const Content = styled.div`
     grid-area: content;
-    padding: 0 64px;
+    padding: 0 4rem;
     overflow-y: auto;
-`
-export const NewNote = styled(Link)`
-    grid-area: newnote;
-    background-color: ${({ theme}) => theme.COLORS.ORANGE};
-    color: ${({ theme}) => theme.COLORS.BACKGROUND_900};
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    > svg {
-        margin-right: 8px;
+    @media(max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        padding: 0 1rem;
     }
 `

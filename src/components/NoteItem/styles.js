@@ -9,9 +9,9 @@ export const Container = styled.div`
 
     border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"};
 
-    margin-bottom: 8px;
-    border-radius: 10px;
-    padding-right: 16px;
+    margin-bottom: .5rem;
+    border-radius: .62rem;
+    padding-right: 1rem;
     
     > button {
         border: none;
@@ -27,9 +27,9 @@ export const Container = styled.div`
     }
 
     > input {
-        height: 56px;
+        height: 3.5rem;
         width: 100%;
-        padding: 12px;
+        padding: .75rem;
 
         color: ${({ theme }) => theme.COLORS.WHITE};
         background: transparent;
