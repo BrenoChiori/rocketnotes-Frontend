@@ -20,10 +20,10 @@ function AuthProvider({ children }) {
 
 
         } catch (error) {
-            if(error.response) {
-                alert(error.response.data.massage)
+            if (error.response) {
+                alert(error.response.data.message)
             } else {
-                alert("não foi possivel entrar.")
+                alert("não foi possivel acessar")
             }
         }
     }
@@ -33,12 +33,12 @@ function AuthProvider({ children }) {
         localStorage.removeItem("@rocketnotes:token")
 
         setData({})
-    } 
-    
+    }
+
     async function updateProfile({ user, avatarFile }) {
         try {
 
-            if(avatarFile) {
+            if (avatarFile) {
                 const fileUploadForm = new FormData()
                 fileUploadForm.append("avatar", avatarFile)
 
@@ -53,19 +53,19 @@ function AuthProvider({ children }) {
             alert("Perfil atualizado")
 
         } catch (error) {
-            if(error.response) {
+            if (error.response) {
                 alert(error.response.data.massage)
             } else {
                 alert("não foi possivel atualizar o perfil.")
             }
         }
-    } 
+    }
 
     useEffect(() => {
         const token = localStorage.getItem("@rocketnotes:token")
         const user = localStorage.getItem("@rocketnotes:user")
 
-        if(token && user) {
+        if (token && user) {
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
 
@@ -78,11 +78,11 @@ function AuthProvider({ children }) {
 
 
     return (
-        <AuthContext.Provider value={{ 
-            signIn, 
-            signOut, 
+        <AuthContext.Provider value={{
+            signIn,
+            signOut,
             updateProfile,
-            user: data.user 
+            user: data.user
         }}>
             {children}
         </AuthContext.Provider>
