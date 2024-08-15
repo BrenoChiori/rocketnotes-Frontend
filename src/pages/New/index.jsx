@@ -27,6 +27,9 @@ export function New() {
     }
 
     function handleAddLink() {
+        if (newLink.trim() === '') {
+            return alert("Por favor, digite algo no campo antes de adicionar.")
+        }
         setLinks(prevState => [...prevState, newLink])
         setNewLink("")
     }
@@ -36,6 +39,9 @@ export function New() {
     }
 
     function handleAddTag() {
+        if (newTag.trim() === '') {
+            return alert("Por favor, digite algo no campo antes de adicionar.")
+        }
         setTags(preveState => [...preveState, newTag])
         setNewTag("")
     }

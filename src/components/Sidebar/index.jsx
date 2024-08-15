@@ -7,7 +7,7 @@ export function Sidebar({ tags, tagsSelected, onTagSelected, menuIsOpen, onClose
     return (
         <Container data-menu-is-open={menuIsOpen}>
             <Brand>
-                <h1>Rocketnotes</h1>
+                <h1>Simple Notes</h1>
                 <button onClick={onCloseMenu}><IoCloseSharp /></button>
             </Brand>
 

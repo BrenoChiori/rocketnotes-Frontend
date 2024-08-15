@@ -5,7 +5,7 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 
 import { api } from "../../services/api";
 import { useAuth } from '../../hooks/auth'
-import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+import avatarPlaceholder from '../../assets/user_default.webp'
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";

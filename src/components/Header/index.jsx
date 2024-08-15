@@ -4,7 +4,7 @@ import { FaList } from "react-icons/fa";
 import { useAuth } from '../../hooks/auth'
 import { api } from "../../services/api";
 import { Container, Profile, Logout, Menu } from "./styles";
-import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+import avatarPlaceholder from '../../assets/user_default.webp'
 import { useNavigate } from "react-router-dom";
 
 export function Header({ onOpenMenu }) {
